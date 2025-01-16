@@ -62,23 +62,25 @@ class _DashboardScreenState extends State<DashboardScreen> {
                   mainAxisSize: MainAxisSize.min,
                   children: [
                     InfoCard(
-                      title: 'Speed',
-                      content: '75 km/h',
-                      subtitle: 'MAX 70\nMIN 35',
-                      color: Colors.red,
-                    ),
+                        title: 'Speed',
+                        content: '50 km/h',
+                        subtitle: 'Test',
+                        color: Colors.black),
                     InfoCard(
-                      title: 'Achievement',
-                      content: '100/50 Ton',
-                      subtitle: '50%',
-                      color: Colors.blue,
-                    ),
+                        title: 'Speed',
+                        content: '50 km/h',
+                        subtitle: 'Test',
+                        color: Colors.black),
                     InfoCard(
-                      title: 'Materials',
-                      content: 'COALS',
-                      subtitle: '',
-                      color: Colors.black,
-                    )
+                        title: 'Speed',
+                        content: '50 km/h',
+                        subtitle: 'Test',
+                        color: Colors.black),
+                    InfoCard(
+                        title: 'Speed',
+                        content: '50 km/h',
+                        subtitle: 'Test',
+                        color: Colors.black),
                   ],
                 ),
               ),
@@ -149,7 +151,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
                           onPressed: () {},
                         ),
                       ],
-                    )
+                    ),
                   ],
                 ),
               ),
@@ -207,22 +209,46 @@ class _DashboardScreenState extends State<DashboardScreen> {
         ),
       );
 
-  Widget overlayContent() => Positioned(
-        top: 0,
-        left: 0,
-        right: 0,
-        child: Column(
+  Widget contentCardLeft() => Container(
+        decoration: BoxDecoration(
+          border: Border.all(color: Colors.grey),
+          borderRadius: BorderRadius.circular(8),
+        ),
+        child: Row(
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            //sped & information section
-            Row(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Expanded(
-                    child: Column(
-                  children: [],
-                ))
-              ],
-            )
+            Container(
+              padding: EdgeInsets.all(16),
+              color: Colors.black,
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Icon(
+                    Icons.speed,
+                    color: Colors.white,
+                  ),
+                  Text(
+                    'Speed',
+                    style: AppTextStyles.labelSmall16,
+                  ),
+                ],
+              ),
+            ),
+            Container(
+              padding: EdgeInsets.all(16),
+              color: Colors.red,
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Text(
+                    '75 \nkm/h',
+                    textAlign: TextAlign.center,
+                    style: AppTextStyles.labelSmall16,
+                  ),
+                ],
+              ),
+            ),
           ],
         ),
       );
